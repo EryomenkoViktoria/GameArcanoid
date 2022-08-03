@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 224f8466165858744abada0447a4c907, type: 3}
-  m_Name: Red
+  m_Name: Blue
   m_EditorClassIdentifier: 
   Prefab: {fileID: 7463559102061577268, guid: 211f89c840f93d1498b1b42378411b1a, type: 3}
   Sprites:
-  - {fileID: 194296401, guid: df957d011f5f2fe4b8567a1baca87b64, type: 3}
   - {fileID: -509067422, guid: df957d011f5f2fe4b8567a1baca87b64, type: 3}
-  BaseColor: {r: 0.74509805, g: 0.100204155, b: 0.066666655, a: 1}
-  Score: 100
+  BaseColor: {r: 0.22022964, g: 0.6962269, b: 0.9528302, a: 1}
+  Score: 50

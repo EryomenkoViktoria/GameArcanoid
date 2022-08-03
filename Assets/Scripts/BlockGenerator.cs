@@ -1,24 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
+using UnityEditor;
+#if UNITY_EDITOR
+using UnityEngine;
+#endif
 namespace GameDevEVO
 {
  public class BlockGenerator : MonoBehaviour
  {
-        [SerializeField]
-        private List<BlockData> m_Blocks;
-
-        private void Start()
+        public void Generate(GameLevel gameLevel , Transform parent)
         {
-            for (int i=0; i<m_Blocks.Count; i++)
+            for (int i= 0; i < gameLevel.Blocks.Count; i++)
             {
-                GameObject game = Instantiate(m_Blocks[i].Prefab, new Vector3(0 + i, 0, 0), Quaternion.identity);
+                GameObject game;
+# if UNITY_EDITOR
+                game = PrefabUtility.InstantiatePrefab(gameLevel.Blocks[i].Block.Prefab, parent) as GameObject;
+                if( game.TryGetComponent(out Block block))
+                {
+                    block.BlockData = gameLevel.Blocks[i].Block;
+                    block.SetData(gameLevel.Blocks[i].Block as ColoredBlock);
+                }
+
+                if (game.TryGetComponent(out OtherBlock other))
+                {
+                    other.BlockData = gameLevel.Blocks[i].Block;
+                }
+
+#else
+                 game = GameObject.Instantiate(gameLevel.Blocks[i].Block.Prefab, parent);
                 if(game.TryGetComponent(out Block block))
                 {
-                    block.SetData(m_Blocks[i]);
+                    ColoredBlock coloredBlock = gameLevel.Blocks[i].Block as ColoredBlock;
+                    block.SetData(coloredBlock);
                 }
+#endif
+                game.transform.position = gameLevel.Blocks[i].Position;
             }
         }
-    }
+ }
 }
