@@ -24,7 +24,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -147,8 +146,8 @@ TextureImporter:
         y: 443
         width: 108
         height: 60
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,8 +167,8 @@ TextureImporter:
         y: 439
         width: 102
         height: 66
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,11 +185,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 228
-        y: 438
+        y: 437
         width: 105
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,8 +230,8 @@ TextureImporter:
         y: 372
         width: 102
         height: 63
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -506,37 +505,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      arkanoid_11: -339254450
-      angle: -2120210255
-      arkanoid_13: -304558215
-      block_dmg: 194296401
-      arkanoid_21: -155686265
-      block_closed: 228659468
-      player: 1575414139
-      background1: 1881018043
-      arkanoid_22: -556805475
-      ball: -161108126
-      arkanoid_20: -127504121
-      wall: -2101106853
-      arkanoid_27: -150756145
-      arkanoid_6: -1228595705
-      arkanoid_15: -2060980480
-      arkanoid_26: 654067060
-      arkanoid_28: 1794429302
-      background3: -1135930330
-      arkanoid_14: 1696027766
-      arkanoid_12: 255030060
-      arkanoid_25: 1651833685
-      arkanoid_7: -1854606852
-      background2: 615436460
-      arkanoid_19: 1112582277
-      arkanoid_3: -343829030
-      arkanoid_16: -838808106
-      arkanoid_24: -1094757323
-      block: -509067422
-      block_DontDestroy: -268648977
-      arkanoid_9: -1647551809
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

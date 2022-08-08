@@ -1,24 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 namespace GameDevEVO
 {
- public class Block : MonoBehaviour
- {
+ public class Block : BaseBlock, IDamageable
+    {
         private static int m_Count = 0;
+        [SerializeField]
         private List<Sprite> m_Sprites;
+        [SerializeField]
         private int m_Score;
+        [SerializeField]
         private SpriteRenderer m_SpriteRenderer;
+        [SerializeField]
         private int m_Life;
-        public void SetData(BlockData blockData)
+//#if UNITY_EDITOR
+//        public BlockData BlockData;
+//#endif
+        public void SetData(ColoredBlock blockData)
         {
             m_Sprites = new List<Sprite>(blockData.Sprites);
             m_Score = blockData.Score;
             m_SpriteRenderer = GetComponent<SpriteRenderer>();
-            m_SpriteRenderer.color = blockData.BaseColor;
             m_Life= m_Sprites.Count;
             m_SpriteRenderer.sprite = m_Sprites[m_Life-1];
+            MainModule main = GetComponent<ParticleSystem>().main;
+            main.startColor = m_SpriteRenderer.color = blockData.BaseColor;
         }
 
         public void ApplyDamage()
@@ -26,7 +35,9 @@ namespace GameDevEVO
             m_Life--;
             if (m_Life < 1)
             {
-                Destroy(gameObject);
+                m_SpriteRenderer.enabled = false;
+                GetComponent<BoxCollider2D>().enabled=false;
+                GetComponent<ParticleSystem>().Play();
             }
 
             else
