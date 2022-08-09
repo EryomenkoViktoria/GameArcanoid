@@ -28,6 +28,17 @@ namespace GameDevEVO
             EditorGUILayout.Space(10);
             m_Parent =(Transform)EditorGUILayout.ObjectField(m_Parent, typeof(Transform), true);
             EditorGUILayout.Space(30);
+            if(GUILayout.Button("Clear key"))
+            {
+                LevelsData levelsData = new LevelsData();
+                    levelsData.Clear();
+                LevelIndex levelIndex = new LevelIndex();
+                levelIndex.Clear();
+                Debug.LogWarning("Clear key");   
+            }
+            
+            
+            EditorGUILayout.Space(30);
 
             if (m_Data == null)
             {
@@ -119,11 +130,7 @@ namespace GameDevEVO
                 }
                 if (GUILayout.Button("Load Level"))
                 {
-                    GameObject[] allBlocks = GameObject.FindGameObjectsWithTag("Block");
-                    foreach(var item in allBlocks)
-                    {
-                        DestroyImmediate(item.gameObject);
-                    }
+                    FindObjectOfType<ClearLevel>().Clear();
                     BlocksGenerator generator = new BlocksGenerator();
                     generator.Generate(m_GameLevel,m_Parent);
                 }
