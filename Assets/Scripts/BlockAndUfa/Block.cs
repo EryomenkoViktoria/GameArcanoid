@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,10 @@ namespace GameDevEVO
         private SpriteRenderer m_SpriteRenderer;
         [SerializeField]
         private int m_Life;
-//#if UNITY_EDITOR
-//        public BlockData BlockData;
-//#endif
+
+        public static event Action OnEnded;
+        public static event Action<int> OnDestroyed;
+
         public void SetData(ColoredBlock blockData)
         {
             m_Sprites = new List<Sprite>(blockData.Sprites);
@@ -52,9 +54,11 @@ namespace GameDevEVO
         private void OnDisable()
         {
             m_Count--;
+            OnDestroyed?.Invoke(m_Score);
+
             if (m_Count < 1)
             {
-                Debug.Log("block");
+                OnEnded?.Invoke();
             }
         }
     }

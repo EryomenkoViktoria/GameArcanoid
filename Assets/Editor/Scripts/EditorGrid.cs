@@ -7,7 +7,7 @@ namespace GameDevEVO
  public class EditorGrid
  {
         private const float m_LeftPosition = -4.5f;
-        private const float m_UpPosition = -8.75F;
+        private const float m_UpPosition = 8.75F;
         private const int m_ColumnCount = 10;
         private const int m_LineCount = 20;
         private const float m_OffsetDown = 0.5f;
@@ -27,7 +27,7 @@ namespace GameDevEVO
                 {
                     if (position.x >x && position.x< (x+m_OffsetRight))
                     {
-                        tempX = +m_OffsetRight / 2;
+                        tempX = x +m_OffsetRight / 2;
                         break;
                     }
                     else

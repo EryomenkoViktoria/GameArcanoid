@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GameDevEVO 
 {
@@ -12,10 +13,15 @@ namespace GameDevEVO
         [SerializeField]
         private Transform m_ParentBlocks;
         [SerializeField]
-        private ClearLevel m_ClearLevel; 
+        private ClearLevel m_ClearLevel;
+        [SerializeField]
+        private GameState m_GameState;
+        [SerializeField]
+        private UnityEvent OnGenerated; 
 
         private void Start()
         {
+            m_GameState.SetState(State.StopGame);
             Init();
         }
 
@@ -28,6 +34,9 @@ namespace GameDevEVO
                 m_BlocksGenerator.Generate(gameLevel, m_ParentBlocks);
             }
             LoadingScreen.Screen.Enable(false);
+            m_GameState.SetState(State.Gameplay);
+            OnGenerated.Invoke();
+            
         }
 
         public void Generate()

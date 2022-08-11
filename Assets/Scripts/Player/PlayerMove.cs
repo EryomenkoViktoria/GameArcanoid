@@ -38,5 +38,10 @@ namespace GameDevEVO
         {
             m_MoveX = moveX;
         }
+
+        public void ResetPosition()
+        {
+            m_Rigidbody2.position = new Vector2(0f, m_Rigidbody2.position.y);
+        }
     }
 }
