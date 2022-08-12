@@ -50,6 +50,11 @@ namespace GameDevEVO
         {
             m_LevelsProgres = GetLevelsProgress();
             m_LevelsProgres.Levels[index] = progress;
+
+            if(index< m_LevelsProgres.Levels.Count - 1)
+            {
+                m_LevelsProgres.Levels[index + 1].IsOpened = true;
+            }
             m_LevelsProgres.Levels[index + 1].IsOpened = true;
             SaveData();
         }

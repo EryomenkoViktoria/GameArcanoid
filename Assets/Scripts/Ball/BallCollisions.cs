@@ -6,11 +6,14 @@ namespace GameDevEVO
 {
     public class BallCollisions : MonoBehaviour
     {
-        [SerializeField] private BallMove m_Ball;
+        [SerializeField]
+        private BallMove m_Ball;
+        [SerializeField]
+        private BallSound m_BallSound;
         private float m_lastPositionX;
         private void OnCollisionEnter2D(Collision2D collision)
         {
-
+            m_BallSound.PlaySoundCollision();
             float ballPositionX = transform.position.x;
 
             if (collision.gameObject.TryGetComponent(out PlayerMove playerMove))

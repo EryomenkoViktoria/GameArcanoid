@@ -18,6 +18,11 @@ namespace GameDevEVO
         private UnityEvent OnLifeLosted;
         [SerializeField]
         private UnityEventInt UIUpdate;
+
+        public int GetLifeCount()
+        {
+            return m_Life;
+        }
         public void SetDefault()
         {
             m_Life = MAXLIFE;

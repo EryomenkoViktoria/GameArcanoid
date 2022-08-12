@@ -10,6 +10,7 @@ namespace GameDevEVO
         private Rigidbody2D m_Rigidbody2D;
         private bool m_IsActiv;
         private const float Force = 300;
+        [SerializeField] private BallSound m_BallSound;
       
 
         private void Start()
@@ -37,6 +38,7 @@ namespace GameDevEVO
                 transform.SetParent(null);
                 m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
                 AddForse();
+                m_BallSound.PlaySoundAwake();
             }
         }
 

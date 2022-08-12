@@ -12,6 +12,10 @@ namespace GameDevEVO
         private int m_Score;
         [SerializeField] private UnityEventInt UiUpdate;
 
+        public int GetScore()
+        {
+            return m_Score;
+        }
         public void SetDefault()
         {
             m_Score = 0;

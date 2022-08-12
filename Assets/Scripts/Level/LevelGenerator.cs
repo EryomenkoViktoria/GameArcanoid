@@ -44,5 +44,23 @@ namespace GameDevEVO
             LoadingScreen.Screen.Enable(true);
             Init();
         }
+
+        public  void GenerateNext()
+        {
+            LevelsData levelsData = new LevelsData();
+            int tempIndex = m_LevelIndex.GetIndex();
+            if ( tempIndex < levelsData.GetLevelsProgress().Levels.Count - 1)
+            {
+                m_LevelIndex.SetIndex(tempIndex + 1);
+                Generate();
+            }
+
+            else
+            {
+                Loader loader = new Loader();
+                m_GameState.SetState(State.Other);
+                loader.LoadingMainScene(true);
+            }
+        }
     }
 }
