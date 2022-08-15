@@ -9,14 +9,25 @@ namespace GameDevEVO
  public class Block : BaseBlock, IDamageable
     {
         private static int m_Count = 0;
+        [HideInInspector]
         [SerializeField]
         private List<Sprite> m_Sprites;
+        [HideInInspector]
         [SerializeField]
         private int m_Score;
+        [HideInInspector]
         [SerializeField]
         private SpriteRenderer m_SpriteRenderer;
+        [HideInInspector]
         [SerializeField]
         private int m_Life;
+
+        [SerializeField]
+        private BoxCollider2D m_BlockCollider;
+        [SerializeField]
+        private BoxCollider2D m_CompositrCollider;
+        [SerializeField]
+        private ParticleSystem m_PartcleSystem;
 
         public static event Action OnEnded;
         public static event Action<int> OnDestroyed;
@@ -30,6 +41,8 @@ namespace GameDevEVO
             m_SpriteRenderer.sprite = m_Sprites[m_Life-1];
             MainModule main = GetComponent<ParticleSystem>().main;
             main.startColor = m_SpriteRenderer.color = blockData.BaseColor;
+
+
         }
 
         public void ApplyDamage()
@@ -38,8 +51,9 @@ namespace GameDevEVO
             if (m_Life < 1)
             {
                 m_SpriteRenderer.enabled = false;
-                GetComponent<BoxCollider2D>().enabled=false;
-                GetComponent<ParticleSystem>().Play();
+                m_BlockCollider.enabled=false;
+                m_CompositrCollider.enabled=false;
+                m_PartcleSystem.Play();
             }
 
             else

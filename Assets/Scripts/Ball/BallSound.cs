@@ -24,7 +24,7 @@ namespace GameDevEVO
 
         public void PlaySoundCollision()
         {
-            if (AudioController.Audio.GetMusicValue())
+            if (AudioController.Audio.GetSoundValue())
             {
                 m_AudioSource.PlayOneShot(m_Collision);
             }

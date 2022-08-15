@@ -32,6 +32,11 @@ namespace GameDevEVO
             {
                 damageable.ApplyDamage();
             }
+
+            if (collision.gameObject.TryGetComponent(out BlockComposite blockComposite))
+            {
+                blockComposite.ApplyDamage(collision.contacts[0].point);
+            }
         }
     }
 }
