@@ -15,11 +15,10 @@ namespace GameDevEVO
                 {
                     if (item.TryGetComponent(out IDamageable damageable))
                     {
-                        if (item.TryGetComponent(out IDamageable damageable))
-                        {
+                        
                             damageable.ApplyDamage();
-                            break;
-                        }
+                           // break;
+                        
                     }
                 }
             }

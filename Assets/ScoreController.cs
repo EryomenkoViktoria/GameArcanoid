@@ -24,15 +24,17 @@ namespace GameDevEVO
 
         private void OnEnable()
         {
-            Block.OnDestroyed += ScoreCollector;
+            Block.OnDestroyed += ScoreCollect;
+            Bonus.OnAdded += ScoreCollect;
         }
 
         private void OnDisable()
         {
-            Block.OnDestroyed -= ScoreCollector;
+            Block.OnDestroyed -= ScoreCollect;
+            Bonus.OnAdded -= ScoreCollect;
 
         }
-        private void ScoreCollector(int value)
+        private void ScoreCollect(int value)
         {
             if(m_GameState.State == State.Gameplay)
             {

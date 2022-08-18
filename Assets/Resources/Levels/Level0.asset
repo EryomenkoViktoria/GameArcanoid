@@ -27,3 +27,8 @@ MonoBehaviour:
     Block: {fileID: 11400000, guid: f1345d4c2af634e47af9d52cce5c5ea7, type: 2}
   - Position: {x: -2.5, y: 4.25, z: 0}
     Block: {fileID: 11400000, guid: f1345d4c2af634e47af9d52cce5c5ea7, type: 2}
+  Bonuses:
+  - {fileID: 6322209427294440565, guid: 36b886aa89d7baa4cb9cc0c801085bc8, type: 3}
+  - {fileID: 6322209427294440565, guid: 36b886aa89d7baa4cb9cc0c801085bc8, type: 3}
+  - {fileID: 8747256966470823390, guid: bc9bd5b8724678042b68320b8850f941, type: 3}
+  - {fileID: 8747256966470823390, guid: bc9bd5b8724678042b68320b8850f941, type: 3}

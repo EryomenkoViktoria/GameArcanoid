@@ -31,6 +31,7 @@ namespace GameDevEVO
 
         public static event Action OnEnded;
         public static event Action<int> OnDestroyed;
+        public static event Action<Vector2> OnDestroyedPosition;
 
         public void SetData(ColoredBlock blockData)
         {
@@ -53,6 +54,7 @@ namespace GameDevEVO
                 m_SpriteRenderer.enabled = false;
                 m_BlockCollider.enabled=false;
                 m_CompositrCollider.enabled=false;
+                OnDestroyedPosition?.Invoke(transform.position);
                 m_PartcleSystem.Play();
             }
 
