@@ -14,11 +14,10 @@ namespace GameDevEVO
         public static event Action<int> OnAdded;
 
         public abstract void Apply();
-        protected abstract void Remove();
 
         public void StopAndRemove()
         {
-            Remove();
+           if (TryGetComponent(out IRemovable removable))
             Destroy(gameObject);
         }
         protected void StartTimer()
@@ -36,8 +35,7 @@ namespace GameDevEVO
                 yield return new WaitForSeconds(TimeStep);
             }
 
-            Remove();
-            Destroy(gameObject);
+            StopAndRemove();
         }
  }
 

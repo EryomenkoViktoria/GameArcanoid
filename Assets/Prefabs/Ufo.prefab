@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8682637128755888874}
   - component: {fileID: 8682637128755888875}
   - component: {fileID: 8682637128755888886}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ufo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72959a94a76439c48bd018e4e00c7134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpriteRenderer: {fileID: 8682637128755888875}
+  m_BoxCollider2D: {fileID: 8682637128755888886}
+  m_ParticleSystem: {fileID: 8682637128755888885}
 --- !u!198 &8682637128755888885
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -57,13 +60,13 @@ ParticleSystem:
   serializedVersion: 7
   lengthInSec: 0.5
   simulationSpeed: 1
-  stopAction: 2
-  cullingMode: 0
+  stopAction: 1
+  cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -299,7 +302,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -621,7 +624,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4916,7 +4919,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: -8931010897596818758, guid: df957d011f5f2fe4b8567a1baca87b64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

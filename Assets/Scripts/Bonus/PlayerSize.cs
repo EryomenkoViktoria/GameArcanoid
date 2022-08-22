@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameDevEVO 
 {
-    public class PlayerSize : Bonus
+    public class PlayerSize : Bonus, IRemovable
     {
         [SerializeField]
         private bool m_Negative;
@@ -15,7 +15,7 @@ namespace GameDevEVO
             SetSize(m_Negative ? -Size : Size);
         }
 
-        protected override void Remove()
+        public  void Remove()
         {
             SetSize(m_Negative ? Size : -Size);
         }

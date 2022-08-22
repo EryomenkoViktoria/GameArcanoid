@@ -7,21 +7,16 @@ namespace GameDevEVO
 {
  public class BallMove : MonoBehaviour
  {
-        private Rigidbody2D m_Rigidbody2D;
+       [SerializeField] private Rigidbody2D m_Rigidbody2D;
         private bool m_IsActiv;
         private const float Force = 300;
         [SerializeField] private BallSound m_BallSound;
       
 
-        private void Start()
-        {
-            m_Rigidbody2D = GetComponent<Rigidbody2D>();
-            m_Rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
-
-        }
 
         private void OnEnable()
         {
+            m_Rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
             PlayerInput.OnClicked += BallActivete;
         }
 
@@ -46,6 +41,14 @@ namespace GameDevEVO
         {
             m_Rigidbody2D.velocity = Vector2.zero;
             m_Rigidbody2D.AddForce(new Vector2(direction * (Force/2), Force));
+        }
+
+        public void StartClone(float direction)
+        {
+            m_IsActiv = true;
+            m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+            AddForse(direction);
+            m_BallSound.PlaySoundAwake();
         }
     }
 }
