@@ -9,7 +9,7 @@ namespace GameDevEVO
         private Rigidbody2D m_Rigidbody2;
         private SpriteRenderer m_SpriteRenderer;
         private float m_MoveX = 0f;
-        private float m_Speed = 15;
+        private float m_Speed = 10f;
         private const float BorderPosition = 5f;
 
         private void Awake()

@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Level4
   m_EditorClassIdentifier: 
   Blocks: []
+  Bonuses: []
+  Background: {fileID: 8130110755066101914, guid: df957d011f5f2fe4b8567a1baca87b64, type: 3}

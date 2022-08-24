@@ -53,6 +53,7 @@ namespace GameDevEVO
         {
             m_BoxCollider2D.enabled = value;
             m_SpriteRenderer.enabled = value;
+            m_BonusMove.enabled = value;
         }
     }
 }

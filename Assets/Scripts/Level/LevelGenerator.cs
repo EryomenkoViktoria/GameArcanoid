@@ -17,7 +17,10 @@ namespace GameDevEVO
         [SerializeField]
         private GameState m_GameState;
         [SerializeField]
-        private UnityEvent OnGenerated; 
+        private UnityEvent OnGenerated;
+        [Space]
+        [SerializeField]
+        private SpriteRenderer m_Background;
 
         private void Start()
         {
@@ -32,6 +35,7 @@ namespace GameDevEVO
             if(gameLevel != null)
             {
                 m_BlocksGenerator.Generate(gameLevel, m_ParentBlocks);
+                m_Background.sprite = gameLevel.Background;
             }
             LoadingScreen.Screen.Enable(false);
             m_GameState.SetState(State.Gameplay);

@@ -6,7 +6,7 @@ namespace GameDevEVO
 {
  public class Loader 
  {
-        private const string Main = " Main";
+        private const string Main = "Main";
         private const string Game = "Game";
 
         public void LoadingMainScene(bool value)

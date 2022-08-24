@@ -27,7 +27,7 @@ namespace GameDevEVO
                 Button button = Instantiate(m_ButtonPrefab, m_Content.transform);
                 if(button.gameObject.TryGetComponent(out LevelButton levelButton))
                 {
-                    levelButton.SetData(levelsProgress.Levels[i], i + 1);
+                    levelButton.SetData(levelsProgress.Levels[i], i);
                 }
             }
 
