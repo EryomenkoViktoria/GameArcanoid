@@ -12,6 +12,7 @@ namespace GameDevEVO
         [SerializeField] private UnityEventInt UiUpdate;
         [SerializeField] private UnityEvent ThousandCollected;
         private const int ScoreToNextBonus = 1000;
+
         private int m_Score;
         public int GetScore()
         {

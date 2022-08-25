@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameDevEVO 
 {
- public class BaseBlock : MonoBehaviour
+ public abstract class BaseBlock : MonoBehaviour
  {
 #if UNITY_EDITOR
         [HideInInspector]

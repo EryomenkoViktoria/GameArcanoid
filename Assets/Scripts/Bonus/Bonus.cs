@@ -18,6 +18,9 @@ namespace GameDevEVO
         public void StopAndRemove()
         {
            if (TryGetComponent(out IRemovable removable))
+            {
+                removable.Remove();
+            }
             Destroy(gameObject);
         }
         protected void StartTimer()

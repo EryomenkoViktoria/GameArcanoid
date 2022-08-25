@@ -1605,6 +1605,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772084255357709966, guid: 5b62bce3a7eee0e41a897971a88e611d, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b62bce3a7eee0e41a897971a88e611d, type: 3}
 --- !u!1 &504798601
@@ -4796,6 +4800,7 @@ GameObject:
   - component: {fileID: 1817569982}
   - component: {fileID: 1817569983}
   - component: {fileID: 1817569984}
+  - component: {fileID: 1817569985}
   m_Layer: 0
   m_Name: Bloks
   m_TagString: Untagged
@@ -4866,56 +4871,6 @@ CompositeCollider2D:
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
-  - m_Collider: {fileID: 32483068}
-    m_ColliderPaths:
-    - - X: 10049707
-        Y: 54950000
-      - X: 10049707
-        Y: 60050000
-      - X: -49999
-        Y: 60049707
-      - X: -49706
-        Y: 54950000
-  - m_Collider: {fileID: 747742023}
-    m_ColliderPaths:
-    - - X: 10049707
-        Y: 34950000
-      - X: 10049707
-        Y: 40050000
-      - X: -49999
-        Y: 40049707
-      - X: -49706
-        Y: 34950000
-  - m_Collider: {fileID: 786810047}
-    m_ColliderPaths:
-    - - X: 10049707
-        Y: 64950000
-      - X: 10049707
-        Y: 70050000
-      - X: -49999
-        Y: 70049707
-      - X: -49706
-        Y: 64950000
-  - m_Collider: {fileID: 95513630}
-    m_ColliderPaths:
-    - - X: 10049707
-        Y: 39950000
-      - X: 10049707
-        Y: 45050000
-      - X: -49999
-        Y: 45049707
-      - X: -49706
-        Y: 39950000
-  - m_Collider: {fileID: 420422496}
-    m_ColliderPaths:
-    - - X: 10049707
-        Y: 9950000
-      - X: 10049707
-        Y: 15050000
-      - X: -49999
-        Y: 15049707
-      - X: -49706
-        Y: 9950000
   - m_Collider: {fileID: 971654986}
     m_ColliderPaths:
     - - X: 10049707
@@ -4926,36 +4881,16 @@ CompositeCollider2D:
         Y: 20049709
       - X: -49706
         Y: 14950000
-  - m_Collider: {fileID: 765775675}
+  - m_Collider: {fileID: 786810047}
     m_ColliderPaths:
     - - X: 10049707
-        Y: 44950000
+        Y: 64950000
       - X: 10049707
-        Y: 50050000
+        Y: 70050000
       - X: -49999
-        Y: 50049707
+        Y: 70049707
       - X: -49706
-        Y: 44950000
-  - m_Collider: {fileID: 1553806509}
-    m_ColliderPaths:
-    - - X: 10049707
-        Y: 19950000
-      - X: 10049707
-        Y: 25050002
-      - X: -49999
-        Y: 25049709
-      - X: -49706
-        Y: 19950000
-  - m_Collider: {fileID: 104201556}
-    m_ColliderPaths:
-    - - X: 10049707
-        Y: 24949998
-      - X: 10049707
-        Y: 30050002
-      - X: -49999
-        Y: 30049709
-      - X: -49706
-        Y: 24949998
+        Y: 64950000
   - m_Collider: {fileID: 2092870267}
     m_ColliderPaths:
     - - X: 10049707
@@ -4966,6 +4901,76 @@ CompositeCollider2D:
         Y: 75049707
       - X: -49706
         Y: 69950000
+  - m_Collider: {fileID: 104201556}
+    m_ColliderPaths:
+    - - X: 10049707
+        Y: 24949998
+      - X: 10049707
+        Y: 30050002
+      - X: -49999
+        Y: 30049709
+      - X: -49706
+        Y: 24949998
+  - m_Collider: {fileID: 747742023}
+    m_ColliderPaths:
+    - - X: 10049707
+        Y: 34950000
+      - X: 10049707
+        Y: 40050000
+      - X: -49999
+        Y: 40049707
+      - X: -49706
+        Y: 34950000
+  - m_Collider: {fileID: 420422496}
+    m_ColliderPaths:
+    - - X: 10049707
+        Y: 9950000
+      - X: 10049707
+        Y: 15050000
+      - X: -49999
+        Y: 15049707
+      - X: -49706
+        Y: 9950000
+  - m_Collider: {fileID: 32483068}
+    m_ColliderPaths:
+    - - X: 10049707
+        Y: 54950000
+      - X: 10049707
+        Y: 60050000
+      - X: -49999
+        Y: 60049707
+      - X: -49706
+        Y: 54950000
+  - m_Collider: {fileID: 1553806509}
+    m_ColliderPaths:
+    - - X: 10049707
+        Y: 19950000
+      - X: 10049707
+        Y: 25050002
+      - X: -49999
+        Y: 25049709
+      - X: -49706
+        Y: 19950000
+  - m_Collider: {fileID: 765775675}
+    m_ColliderPaths:
+    - - X: 10049707
+        Y: 44950000
+      - X: 10049707
+        Y: 50050000
+      - X: -49999
+        Y: 50049707
+      - X: -49706
+        Y: 44950000
+  - m_Collider: {fileID: 95513630}
+    m_ColliderPaths:
+    - - X: 10049707
+        Y: 39950000
+      - X: 10049707
+        Y: 45050000
+      - X: -49999
+        Y: 45049707
+      - X: -49706
+        Y: 39950000
   m_CompositePaths:
     m_Paths:
     - - {x: 1.0049415, y: 6.495}
@@ -4986,6 +4991,18 @@ CompositeCollider2D:
       - {x: -0.0049413, y: 0.995}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+--- !u!114 &1817569985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817569981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bad09b5da77df44ba9bed418c9e0892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1848389661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6397,6 +6414,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ThousandCollected:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1641368820}
         m_TargetAssemblyTypeName: GameDevEVO.UfoGenerator, Assembly-CSharp
         m_MethodName: Generate
@@ -6409,9 +6429,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ThousandCollected:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2119971037
 MonoBehaviour:
   m_ObjectHideFlags: 0

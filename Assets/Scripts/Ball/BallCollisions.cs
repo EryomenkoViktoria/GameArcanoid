@@ -18,7 +18,7 @@ namespace GameDevEVO
 
             if (collision.gameObject.TryGetComponent(out PlayerMove playerMove))
             {
-                if (collision.gameObject.TryGetComponent(out PlayerMove player))
+                if (ballPositionX < m_lastPositionX +0.1 && ballPositionX> m_lastPositionX -0.1)
                 {
                     float collisionPointX = collision.contacts[0].point.x;
                     float playerCenterPosition = playerMove.gameObject.transform.position.x;
