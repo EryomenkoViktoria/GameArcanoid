@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e286b0231402c742978c72958c3944f, type: 3}
+  m_Name: EditorData
+  m_EditorClassIdentifier: 
+  BlockDatas:
+  - Texture2D: {fileID: 2800000, guid: 099c8f886d0655d4a80d347f3ad6e652, type: 3}
+    BlockData: {fileID: 11400000, guid: c11b6e541676c5d4cbf5926fd8822c2d, type: 2}
+  - Texture2D: {fileID: 2800000, guid: 099c8f886d0655d4a80d347f3ad6e652, type: 3}
+    BlockData: {fileID: 11400000, guid: f1345d4c2af634e47af9d52cce5c5ea7, type: 2}
+  - Texture2D: {fileID: 2800000, guid: 099c8f886d0655d4a80d347f3ad6e652, type: 3}
+    BlockData: {fileID: 11400000, guid: c6ce0bd66cf764840bfb4aa3a3ef0ec8, type: 2}
+  - Texture2D: {fileID: 2800000, guid: 24da03320a7169b45890b18e75e18df7, type: 3}
+    BlockData: {fileID: 11400000, guid: e52f513c62b9efc4d90ad77c5884cf53, type: 2}

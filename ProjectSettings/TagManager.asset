@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Block
+  - BulletsPool
+  - UfosPool
   layers:
   - Default
   - TransparentFX
@@ -13,11 +16,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ball
+  - Block
+  - Bullet
+  - Wall
+  - Ufo
   - 
   - 
   - 
@@ -43,4 +46,10 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: effects
+    uniqueID: 3946437637
+    locked: 0
+  - name: 
+    uniqueID: 2798952205
     locked: 0
