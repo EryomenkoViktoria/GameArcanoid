@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GameDevEVO 
+namespace GameDevEVO
 {
- public class ScoreController : MonoBehaviour
- {
+    public class ScoreController : MonoBehaviour
+    {
         [SerializeField] private GameState m_GameState;
         [SerializeField] private UnityEventInt UiUpdate;
         [SerializeField] private UnityEvent ThousandCollected;
@@ -39,11 +36,11 @@ namespace GameDevEVO
         }
         private void ScoreCollect(int value)
         {
-            if(m_GameState.State == State.Gameplay)
+            if (m_GameState.State == State.Gameplay)
             {
                 m_Score += value;
                 UiUpdate.Invoke(m_Score);
-                if(m_Score % ScoreToNextBonus == 0)
+                if (m_Score % ScoreToNextBonus == 0)
                 {
                     ThousandCollected.Invoke();
                 }

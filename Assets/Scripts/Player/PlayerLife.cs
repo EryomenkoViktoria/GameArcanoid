@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GameDevEVO 
+namespace GameDevEVO
 {
- public class PlayerLife : MonoBehaviour
- {
+    public class PlayerLife : MonoBehaviour
+    {
         private const int MAXLIFE = 3;
         private int m_Life;
         [SerializeField]
@@ -18,6 +16,8 @@ namespace GameDevEVO
         private UnityEvent OnLifeLosted;
         [SerializeField]
         private UnityEventInt UIUpdate;
+
+        public static event Action OnRestartGame;
 
         public int GetLifeCount()
         {
@@ -41,17 +41,17 @@ namespace GameDevEVO
 
         private void LostLife()
         {
-           if(m_GameState.State == State.Gameplay)
+            if (m_GameState.State == State.Gameplay)
             {
                 m_Life--;
-                if(m_Life < 1)
+                if (m_Life < 1)
                 {
                     OnAllLifeLosted.Invoke();
                 }
-
                 else
                 {
                     OnLifeLosted.Invoke();
+                    OnRestartGame.Invoke();
                 }
                 UIUpdate.Invoke(m_Life);
             }

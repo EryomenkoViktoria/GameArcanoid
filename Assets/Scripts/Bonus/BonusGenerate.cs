@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevEVO 
+namespace GameDevEVO
 {
- public class BonusGenerate : MonoBehaviour
- {
+    public class BonusGenerate : MonoBehaviour
+    {
         [SerializeField]
         private GameState m_GameState;
         private readonly List<BonusAttach> m_LevelBonuses = new List<BonusAttach>();
@@ -15,9 +15,9 @@ namespace GameDevEVO
         {
             m_LevelIndex.Clear();
             GameLevel gameLevel = Resources.Load<GameLevel>($"Levels/Level{m_LevelIndex.GetIndex()}");
-            if(gameLevel != null)
+            if (gameLevel != null)
             {
-                 foreach (var item in gameLevel.Bonuses)
+                foreach (var item in gameLevel.Bonuses)
                 {
                     BonusAttach bonusAttach = Instantiate(item, transform);
                     bonusAttach.transform.position = transform.position;
@@ -27,11 +27,12 @@ namespace GameDevEVO
         }
 
 
-        private void Activate (Vector2 position)
+        private void Activate(Vector2 position)
         {
-            if(m_LevelBonuses.Count > 0)
+            if (m_LevelBonuses.Count > 0)
             {
                 int index = Random.Range(0, m_LevelBonuses.Count);
+                Debug.Log("Activate " + m_LevelBonuses.Count + " / " + index); 
                 m_LevelBonuses[index].transform.SetParent(null);
                 m_LevelBonuses[index].transform.position = position;
                 m_LevelBonuses[index].SetEnableMoveAndVisual(true);
@@ -51,7 +52,7 @@ namespace GameDevEVO
 
         private void BonusChance(Vector2 position)
         {
-            if(m_GameState.State == State.Gameplay)
+            if (m_GameState.State == State.Gameplay)
             {
                 var chance = Random.Range(0, 100);
                 if (chance > 70)

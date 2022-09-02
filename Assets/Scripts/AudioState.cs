@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevEVO 
+namespace GameDevEVO
 {
- public class AudioState : MonoBehaviour
- {
+    public class AudioState : MonoBehaviour
+    {
         private AudioValues m_AudioValues = new AudioValues();
         private const string Key = "Audio";
 
@@ -16,7 +13,7 @@ namespace GameDevEVO
             {
                 m_AudioValues = JsonUtility.FromJson<AudioValues>(PlayerPrefs.GetString(Key));
             }
-           
+
             else
             {
                 Create();
@@ -50,7 +47,7 @@ namespace GameDevEVO
 
         private void Save()
         {
-            string save =JsonUtility.ToJson(m_AudioValues);
+            string save = JsonUtility.ToJson(m_AudioValues);
             PlayerPrefs.SetString(Key, save);
             PlayerPrefs.Save();
         }

@@ -1,15 +1,14 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevEVO 
+namespace GameDevEVO
 {
- public class WindowController : MonoBehaviour
- {
+    public class WindowController : MonoBehaviour
+    {
         [SerializeField] private GameState m_GameState;
         [SerializeField] private GameObject m_EndGameWindow;
         [SerializeField] private GameObject m_PauseWindow;
+        public static event Action StopGame;
 
         public void Play()
         {
@@ -54,9 +53,10 @@ namespace GameDevEVO
 
         private void EndGame()
         {
-            if(m_GameState.State == State.Gameplay)
+            if (m_GameState.State == State.Gameplay)
             {
                 m_EndGameWindow.SetActive(true);
+                StopGame?.Invoke();
             }
         }
     }

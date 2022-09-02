@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevEVO 
+namespace GameDevEVO
 {
- public class BallCount : MonoBehaviour
- {
+    public class BallCount : MonoBehaviour
+    {
         private static int m_Count = 0;
         public static event Action OnEnded;
 
@@ -18,7 +16,7 @@ namespace GameDevEVO
         private void OnDisable()
         {
             m_Count--;
-            if(m_Count <1)
+            if (m_Count < 1)
             {
                 OnEnded?.Invoke();
             }

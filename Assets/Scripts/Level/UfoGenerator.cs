@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevEVO 
+namespace GameDevEVO
 {
- public class UfoGenerator : MonoBehaviour
- {
+    public class UfoGenerator : MonoBehaviour
+    {
 
         private const float MinPositionY = -4.75f;
         private const float MaxPositionY = 8.75f;
@@ -13,10 +11,10 @@ namespace GameDevEVO
 
         private void OnEnable()
         {
-            if( m_UfosPool == null)
+            if (m_UfosPool == null)
             {
                 ObjectPool[] objectPools = FindObjectsOfType<ObjectPool>();
-                for(int i = 0; i < objectPools.Length; i++)
+                for (int i = 0; i < objectPools.Length; i++)
                 {
                     if (objectPools[i].gameObject.CompareTag("UfosPool"))
                     {
@@ -30,9 +28,9 @@ namespace GameDevEVO
         public void Generate()
         {
             GameObject ufo = m_UfosPool.GetObject();
-            if(ufo != null)
+            if (ufo != null)
             {
-                float  tempY = Random.Range(MinPositionY, MaxPositionY);
+                float tempY = Random.Range(MinPositionY, MaxPositionY);
                 ufo.transform.position = new Vector2(transform.position.x, tempY);
                 ufo.SetActive(true);
             }

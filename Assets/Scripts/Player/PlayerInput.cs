@@ -1,7 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace GameDevEVO
 {
@@ -11,19 +11,54 @@ namespace GameDevEVO
         public static event Action OnClicked;
         private Vector2 m_StartPosition = Vector2.zero;
         private float m_Direction = 0f;
+        [SerializeField]
+        private Button m_StartGame;
+
+        [SerializeField]
+        private GameObject m_StartGamePanel;
+
+        private void OnEnable()
+        {
+            m_StartGame.onClick.AddListener(StartGame);
+            PlayerLife.OnRestartGame += StartGamePanel;
+            WindowController.StopGame += ClousedGamePanel;
+        }
+
+        private void OnDisable()
+        {
+            m_StartGame.onClick.RemoveListener(StartGame);
+            PlayerLife.OnRestartGame -= StartGamePanel;
+            WindowController.StopGame -= ClousedGamePanel;
+        }
+
+        private void StartGame()
+        {
+            OnClicked?.Invoke();
+        }
+
+        private void StartGamePanel()
+        {
+            m_StartGamePanel.SetActive(true);
+        }
+
+        private void ClousedGamePanel()
+        {
+            m_StartGamePanel.SetActive(false);
+        }
 
         private void Update()
         {
 #if UNITY_EDITOR
             OnMove?.Invoke(Input.GetAxisRaw("Horizontal"));
+
             if (Input.GetKeyDown(KeyCode.Backspace))
             {
-                OnClicked?.Invoke();
+                StartGame();
             }
 #endif
-#if Unity_ANDROID
+            //#if Unity_ANDROID
             GetTouchInput();
-#endif
+            //#endif
         }
 
         private void GetTouchInput()
@@ -38,7 +73,7 @@ namespace GameDevEVO
                 switch (touch.phase)
                 {
                     case TouchPhase.Moved:
-                        m_Direction = touch.position.x> m_StartPosition.x ? 1f : -1f;
+                        m_Direction = touch.position.x > m_StartPosition.x ? 1f : -1f;
                         break;
                     default:
                         m_StartPosition = touch.position;

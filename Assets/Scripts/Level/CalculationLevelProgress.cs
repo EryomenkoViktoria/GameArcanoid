@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevEVO 
+namespace GameDevEVO
 {
- public class CalculationLevelProgress : MonoBehaviour
- {
+    public class CalculationLevelProgress : MonoBehaviour
+    {
         [SerializeField]
         private PlayerLife m_PlayerLife;
         [SerializeField]
@@ -36,11 +33,11 @@ namespace GameDevEVO
 
         private void SaveLevelProgress()
         {
-            if(m_EndGameData.Record < m_EndGameData.Score)
+            if (m_EndGameData.Record < m_EndGameData.Score)
             {
                 m_Progress.MaxScore = m_EndGameData.Score;
             }
-            if(m_Progress.StarsCount < m_EndGameData.Life)
+            if (m_Progress.StarsCount < m_EndGameData.Life)
             {
                 m_Progress.StarsCount = m_EndGameData.Life;
             }
@@ -53,8 +50,6 @@ namespace GameDevEVO
             Calculate();
             return m_EndGameData;
         }
-
-    
     }
 
     public struct EndGameData
@@ -65,4 +60,3 @@ namespace GameDevEVO
         public int Record;
     }
 }
-
